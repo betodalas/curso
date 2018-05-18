@@ -8,8 +8,7 @@ python:
 
   - "pypy"
 install:
- - apt-get update
- - pip install pytest
+ - pip install -r requirements.txt
 
 script: python test.py
 
