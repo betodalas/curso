@@ -4,4 +4,4 @@ convox update
 convox login console.convox.com -p $PASS
 convox switch lendico-stg/lendico-stg-ecs
 convox apps
-echo "hello"
+cat test.py
