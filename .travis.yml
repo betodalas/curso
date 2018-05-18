@@ -5,7 +5,9 @@ python:
 
   - "pypy"
 install:
+ - pip install pyOpenSSL ndg-httpsclient pyasn1
  - pip install -r requirements.txt
+
 
 script: python test.py
 
