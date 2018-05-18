@@ -4,8 +4,11 @@ python:
   - "3.5"
 
   - "pypy"
+
+addons:
+  apt:
+    update: true
 install:
- - pip install --upgrade pip
  - pip install -r requirements.txt
 
 
