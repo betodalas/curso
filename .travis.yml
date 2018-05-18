@@ -8,7 +8,6 @@ python:
 
   - "pypy"
 install:
-  - pip install .
   - pip install -r requirements.txt
 
 script: py.test test.py
