@@ -3,5 +3,5 @@ sudo unzip /tmp/convox.zip -d /usr/local/bin
 convox update
 convox login console.convox.com -p $PASS
 convox switch lendico-stg/lendico-stg-ecs
-convox apps
+convox racks
 cat test.py
