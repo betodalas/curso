@@ -1,6 +1,13 @@
-deployment:
-  production:
-    branch: master
-    commands:
-      - docker-compose -f hobbyprojects-compose/production/docker-compose.yml up -d
-      - docker images --no-trunc | grep none | awk '{print $3}' | xargs docker rmi
+version: 2
+jobs:
+  build:
+    docker:
+      - image: debian:stretch
+    steps:
+      - checkout
+      - run:
+          name: Greeting
+          command: docker built .
+      - run:
+          name: Print the Current Time
+          command: date
