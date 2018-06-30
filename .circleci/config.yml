@@ -1,22 +1,6 @@
-
-     deploy-job:
-       docker:
-         - image: convox/proxy
-       working_directory: /tmp/my-project  
-       steps:
-         - run
-             name: Deploy Master to GKE
-             command: ./deploy.sh
-               
-    workflows:
-      version: 2
-      build-deploy:
-        jobs:
-          - build-job
-          - deploy-job:
-              requires:
-                - build-job
-              filters:
-                branches:
-                  only: master
-                  
+deployment:
+  production:
+    branch: master
+    commands:
+      - docker-compose -f hobbyprojects-compose/production/docker-compose.yml up -d
+      - docker images --no-trunc | grep none | awk '{print $3}' | xargs docker rmi
